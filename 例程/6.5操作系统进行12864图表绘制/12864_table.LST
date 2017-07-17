@@ -1,0 +1,66 @@
+C51 COMPILER V9.00   12864_TABLE                                                           07/15/2017 19:40:38 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 12864_TABLE
+OBJECT MODULE PLACED IN 12864_table.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE 12864_table.c BROWSE INCDIR(.\ZLG_GUI;.\) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <config.h>
+   2          #include <12864.h>
+   3          
+   4          uchar xdata tableData[100] = {0};
+   5          uchar tableData_uper = 0;
+   6          uchar tableData_downer = 0;
+   7          
+   8          void setData(uchar input){
+   9   1              if((tableData_uper + 1 ) % 100 == tableData_downer){
+  10   2                      tableData_downer = (tableData_downer + 1)%100;
+  11   2                      tableData[tableData_uper++] = input;
+  12   2                      tableData_uper %=100;   
+  13   2              }else{
+  14   2                      tableData[tableData_uper++] = input;
+  15   2                      tableData_uper%=100;
+  16   2              }
+  17   1      }
+  18          
+  19          void tableInit(){
+  20   1              uchar i;
+  21   1              for(i = 5; i < 56; i++){
+  22   2                       Lcd_PutPixel(7, i, 1);
+  23   2              }
+  24   1              for(i = 7; i < 120; i++){
+  25   2                       Lcd_PutPixel(i, 56, 1);
+  26   2              }
+  27   1      }
+  28          
+  29          void setTable(uchar input){
+  30   1      //      uchar i;
+  31   1      //      for(i = 0; i < 100; i++){
+  32   1      //              Lcd_PutPixel_Sp((9+i), (50-tableData[(tableData_uper + i)% 100]+6), 1); 
+  33   1      //      }
+  34   1              static uchar i;
+  35   1              
+  36   1              Lcd_PutPixel((8+i), (64-tableData[tableData_uper]-9), 0);       
+  37   1              Lcd_PutPixel((8+i), (64-input-9), 1);
+  38   1              setData(input); 
+  39   1              i++;
+  40   1              if(i == 100){
+  41   2                      i = 0;
+  42   2              }
+  43   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    171    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    100    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

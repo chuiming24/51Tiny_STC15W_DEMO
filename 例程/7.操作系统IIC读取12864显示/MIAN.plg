@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\STC15\Tiny51\7.操作系统IIC读取12864显示\MIAN.uvproj
+Project File Date:  07/14/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(41): warning C206: 'qsort': missing function-prototype
+MIAN.C(41): error C267: 'qsort': requires ANSI-style prototype
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling iic.c...
+compiling usar.c...
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling iic.c...
+compiling usar.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETKEY?USAR
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDSTRING?USAR
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LCD1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LCD1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=104.5 xdata=0 code=3551
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 11 Warning(s).

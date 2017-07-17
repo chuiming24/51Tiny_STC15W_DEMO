@@ -1,0 +1,180 @@
+C51 COMPILER V9.00   USAR                                                                  07/12/2017 16:51:12 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE USAR
+OBJECT MODULE PLACED IN usar.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE usar.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /******************************************************************************/
+   2          /*                                                                            */
+   3          /*       SERIAL.C:  Interrupt Controlled Serial Interface for RTX-51 tiny     */
+   4          /*                                                                            */
+   5          /******************************************************************************/
+   6          
+   7          #include <config.h>
+   8          #include <rtx51tny.h>                 /* RTX-51 tiny functions & defines      */
+   9          
+  10          #define  OLEN  8                      /* size of serial transmission buffer   */
+  11          unsigned char  ostart;                /* transmission buffer start index      */
+  12          unsigned char  oend;                  /* transmission buffer end index        */
+  13          idata    char  outbuf[OLEN];          /* storage for transmission buffer      */
+  14          unsigned char  otask = 0xff;          /* task number of output task           */
+  15          
+  16          #define  ILEN  8                      /* size of serial receiving buffer      */
+  17          unsigned char  istart;                /* receiving buffer start index         */
+  18          unsigned char  iend;                  /* receiving buffer end index           */
+  19          idata    char  inbuf[ILEN];           /* storage for receiving buffer         */
+  20          unsigned char  itask = 0xff;          /* task number of output task           */
+  21          
+  22          #define   CTRL_Q  0x11                /* Control+Q character code             */
+  23          #define   CTRL_S  0x13                /* Control+S character code             */
+  24          
+  25          static bit   sendfull;                /* flag: marks transmit buffer full     */
+  26          static bit   sendactive;              /* flag: marks transmitter active       */
+  27          static bit   sendstop;                /* flag: marks XOFF character           */
+  28          
+  29          /******************************************************************************/
+  30          /*       putbuf:  write a character to SBUF or transmission buffer            */
+  31          /******************************************************************************/
+  32          static void putbuf (char c)  {
+  33   1        if (!sendfull)  {                   /* transmit only if buffer not full     */
+  34   2          ES = 0;                           /* disable serial interrupt             */      
+  35   2          if (!sendactive && !sendstop)  {  /* if transmitter not active:           */
+  36   3            sendactive = 1;                 /* transfer the first character direct  */
+  37   3            SBUF = c;                       /* to SBUF to start transmission        */
+  38   3          }
+  39   2          else  {                           /* otherwize:                           */
+  40   3            outbuf[oend++ & (OLEN-1)] = c;  /* transfer char to transmission buffer */
+  41   3            if (((oend ^ ostart) & (OLEN-1)) == 0)  sendfull = 1;
+  42   3          }                                 /* set flag if buffer is full           */
+  43   2              ES = 1;                           /* enable serial interrupt              */      
+  44   2        }
+  45   1      }
+  46          
+  47          
+  48          /******************************************************************************/
+  49          /*       putchar:  interrupt controlled putchar function                      */
+  50          /******************************************************************************/
+  51          char putchar (char c)  {
+  52   1        if (c == '\n')  {                   /* expand new line character:           */
+  53   2          while (sendfull)  {               /* wait for transmission buffer empty   */
+  54   3            otask = os_running_task_id ();  /* set output task number               */
+  55   3            os_wait (K_SIG, 0, 0);          /* RTX-51 call: wait for signal         */
+C51 COMPILER V9.00   USAR                                                                  07/12/2017 16:51:12 PAGE 2   
+
+  56   3            otask = 0xff;                   /* clear output task number             */
+  57   3          }
+  58   2          putbuf (0x0D);                    /* send CR before LF for <new line>     */
+  59   2        }
+  60   1        while (sendfull)  {                 /* wait for transmission buffer empty   */
+  61   2          otask = os_running_task_id ();    /* set output task number               */
+  62   2          os_wait (K_SIG, 0, 0);            /* RTX-51 call: wait for signal         */
+  63   2          otask = 0xff;                     /* clear output task number             */
+  64   2        }
+  65   1        putbuf (c);                         /* send character                       */
+  66   1        return (c);                         /* return character: ANSI requirement   */
+  67   1      }
+  68          
+  69          
+  70          /******************************************************************************/
+  71          /*       _getkey:  interrupt controlled _getkey                               */
+  72          /******************************************************************************/
+  73          char _getkey (void)  {
+  74   1        while  (iend == istart)  {
+  75   2          itask = os_running_task_id ();    /* set input task number                */
+  76   2          os_wait (K_SIG, 0, 0);            /* RTX-51 call: wait for signal         */
+  77   2          itask = 0xff;                     /* clear input task number              */
+  78   2        }
+  79   1        return (inbuf[istart++ & (ILEN-1)]);
+  80   1      }
+  81          
+  82          
+  83          /******************************************************************************/
+  84          /*       serial:  serial receiver / transmitter interrupt                     */
+  85          /******************************************************************************/
+  86          void serial (void) interrupt 4 using 2  { /* use registerbank 2 for interrupt */
+  87   1        unsigned char c;
+  88   1        bit   start_trans = 0;
+  89   1      
+  90   1        if (RI)  {                         /* if receiver interrupt                 */
+  91   2          c = SBUF;                        /* read character                        */
+  92   2          RI = 0;                          /* clear interrupt request flag          */
+  93   2          switch (c)  {                    /* process character                     */
+  94   3            case CTRL_S:
+  95   3              sendstop = 1;                /* if Control+S stop transmission        */
+  96   3              break;
+  97   3      
+  98   3            case CTRL_Q:
+  99   3              start_trans = sendstop;      /* if Control+Q start transmission       */
+ 100   3              sendstop = 0;
+ 101   3              break;
+ 102   3      
+ 103   3            default:                       /* read all other characters into inbuf  */
+ 104   3              if (istart + ILEN != iend)  {
+ 105   4                inbuf[iend++ & (ILEN-1)] = c;
+ 106   4              }
+ 107   3                                           /* if task waiting: signal ready         */
+ 108   3              if (itask != 0xFF) isr_send_signal (itask);
+ 109   3              break;
+ 110   3          }
+ 111   2        }
+ 112   1      
+ 113   1        if (TI || start_trans)  {          /* if transmitter interrupt              */
+ 114   2          TI = 0;                          /* clear interrupt request flag          */
+ 115   2          if (ostart != oend)  {           /* if characters in buffer and           */
+ 116   3            if (!sendstop)  {              /* if not Control+S received             */
+ 117   4              SBUF = outbuf[ostart++ & (OLEN-1)];      /* transmit character        */
+C51 COMPILER V9.00   USAR                                                                  07/12/2017 16:51:12 PAGE 3   
+
+ 118   4              sendfull = 0;                /* clear 'sendfull' flag                 */
+ 119   4                                           /* if task waiting: signal ready         */
+ 120   4              if (otask != 0xFF)  isr_send_signal (otask);
+ 121   4            }
+ 122   3          }
+ 123   2          else sendactive = 0;             /* if all transmitted clear 'sendactive' */
+ 124   2        }
+ 125   1      
+ 126   1      }
+ 127          
+ 128          
+ 129          ///******************************************************************************/
+ 130          ///*       serial_init: initialize serial interface                             */
+ 131          ///******************************************************************************/
+ 132          //void serial_init (void)  {
+ 133          //  P1M1 = 0xFE;                   // Configure P1.0 (TxD) as Output
+ 134          //
+ 135          //  SCON   = 0x52;                 /* initialize UART                            */
+ 136          //  BRGR0  = 0xF0;                 /* 9600 baud, 8 bit, no parity, 1 stop bit    */
+ 137          //  BRGR1  = 0x02;
+ 138          //  BRGCON = 0x03;
+ 139          //}
+ 140          
+ 141          
+ 142          void UartInit(void)             //9600bps@11.0592MHz
+ 143          {
+ 144   1              SCON = 0x50;            //8位数据,可变波特率
+ 145   1              AUXR |= 0x40;           //定时器1时钟为Fosc,即1T
+ 146   1              AUXR &= 0xFE;           //串口1选择定时器1为波特率发生器
+ 147   1              TMOD &= 0x0F;           //设定定时器1为16位自动重装方式
+ 148   1              TL1 = 0xE0;             //设定定时初值
+ 149   1              TH1 = 0xFE;             //设定定时初值
+ 150   1              ET1 = 0;                //禁止定时器1中断
+ 151   1              TR1 = 1;                //启动定时器1
+ 152   1              ES = 1;
+ 153   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    306    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6       1
+   IDATA SIZE       =     16    ----
+   BIT SIZE         =      3       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

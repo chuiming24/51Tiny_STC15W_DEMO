@@ -1,0 +1,122 @@
+C51 COMPILER V9.00   MIAN                                                                  07/14/2017 09:32:30 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MIAN
+OBJECT MODULE PLACED IN mian.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE mian.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**********************************************************************
+   2          作者：套套
+   3          邮箱：2011543651@qq.com
+   4          功能：用于演示STC15使用tiny51系统的例子
+   5                          使用keil官方的Tiny用串口函数进行串口命令读取并回显
+   6          
+   7          **********************************************************************/
+   8          #include <rtx51tny.h>
+   9          #include <config.H>
+  10          #include <stdio.h>
+  11          #include <12864.h>
+  12          #include <delay.h>
+  13          #include <gpio.h>
+  14          
+  15          #define os_enter_critical() ET0=0
+  16          #define os_exit_critical()      ET0=1
+  17          
+  18          /**********************************************************************
+  19                  第一个任务，用于初始化。
+  20          **********************************************************************/
+  21          void Init() _task_ 0  {                  
+  22   1              os_create_task (1);               //创建第一个任务      
+  23   1              os_create_task (2);               //创建第二个任务
+  24   1              os_create_task (3);               //创建第二个任务
+  25   1              gpio();                 
+  26   1              Lcd_init();
+  27   1              Lcd_str(0, 0, "1 OFF!");
+  28   1              Lcd_str(1, 0, "2 OFF!");
+  29   1              os_delete_task (0);               //初始化完毕，删除自身任务
+  30   1      }
+  31          
+  32          ///**********************************************************************
+  33          //      第二个任务，使用按键驱动屏幕显示
+  34          //**********************************************************************/
+  35          void LED1() _task_ 1{
+  36   1              while (1)  {
+  37   2                      if(P23 == 0){
+  38   3                              os_wait2 (K_TMO, 1);
+  39   3                              if(P23 == 0){
+  40   4                                      os_send_signal (2);     
+  41   4                              }
+  42   3                              while(!P23);
+  43   3                              Lcd_str(0, 0, "                ");
+  44   3                              Lcd_str(0, 0, "1 OFF!");                                //显示内容
+  45   3                      }
+  46   2                      if(P24 == 0){
+  47   3                              os_wait2 (K_TMO, 1);
+  48   3                              if(P24 == 0){
+  49   4                                      os_send_signal (3);     
+  50   4                              }
+  51   3                              while(!P24);
+  52   3                      }
+  53   2              }
+  54   1      }
+  55          
+C51 COMPILER V9.00   MIAN                                                                  07/14/2017 09:32:30 PAGE 2   
+
+  56          /**********************************************************************
+  57                  第三个任务，使用12864进行驱动显示按键按下了按键1
+  58          **********************************************************************/
+  59          void LCD1() _task_ 2{
+  60   1              while(1){
+  61   2                      os_wait2 (K_SIG, 0);
+  62   2                      Lcd_str(0, 0, "                ");
+  63   2                      Lcd_str(0, 0, "1 ON!");                         //显示内容
+  64   2              }
+  65   1      }
+  66          /**********************************************************************
+  67                  第三个任务，使用12864进行LED驱动
+  68          **********************************************************************/
+  69          void LCD2() _task_ 3{
+  70   1              while(1){
+  71   2                      os_wait2 (K_SIG, 0);
+  72   2                              P1 = ~0x01;
+  73   2                              Lcd_str(1, 0, "                ");
+  74   2                              Lcd_str(1, 0, "状态1!");                                //显示内容
+  75   2                      os_wait2 (K_SIG, 0);
+  76   2                              P1 = ~0x02;
+  77   2                              Lcd_str(1, 0, "                ");
+  78   2                              Lcd_str(1, 0, "状态2!");                                //显示内容
+  79   2                      os_wait2 (K_SIG, 0);
+  80   2                              P1 = ~0x04;
+  81   2                              Lcd_str(1, 0, "                ");
+  82   2                              Lcd_str(1, 0, "状态3!");                                //显示内容
+  83   2                      os_wait2 (K_SIG, 0);
+  84   2                              P1 = ~0x08;
+  85   2                              Lcd_str(1, 0, "                ");
+  86   2                              Lcd_str(1, 0, "状态4!");                                //显示内容
+  87   2              }
+  88   1      }
+  89          
+  90          
+  91          //void main(){
+  92          //      Timer1Init();
+  93          //      EA = 1;
+  94          //      while(1){
+  95          //              ;
+  96          //      }
+  97          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    299    ----
+   CONSTANT SIZE    =     65    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

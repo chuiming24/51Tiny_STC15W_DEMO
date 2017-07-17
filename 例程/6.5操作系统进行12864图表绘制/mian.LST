@@ -1,0 +1,138 @@
+C51 COMPILER V9.00   MIAN                                                                  07/15/2017 19:40:37 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MIAN
+OBJECT MODULE PLACED IN mian.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE mian.c BROWSE INCDIR(.\ZLG_GUI;.\) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**********************************************************************
+   2          作者：套套
+   3          邮箱：2011543651@qq.com
+   4          功能：用于演示STC15使用tiny51系统的例子
+   5                          使用keil官方的Tiny用串口函数进行串口命令读取并回显
+   6          
+   7          **********************************************************************/
+   8          #include <rtx51tny.h>
+   9          #include <config.H>
+  10          #include <stdio.h>
+  11          #include <12864.h>
+  12          #include <12864_table.h>
+  13          #include <delay.h>
+  14          #include <gpio.h>
+  15          #include <iic.h>
+  16          #include <pwm.h>
+  17          
+  18          #define os_enter_critical() ET0=0
+  19          #define os_exit_critical()      ET0=1
+  20          char temp[17];
+  21          uchar i = 0;
+  22          uchar x = 0;
+  23          
+  24          /**********************************************************************
+  25                  第一个任务，用于初始化。
+  26          **********************************************************************/
+  27          void Init() _task_ 0  {                  
+  28   1              gpio();                 
+  29   1              Lcd_init();
+  30   1              Lcd_Clear(0);
+  31   1              tableInit();
+  32   1              pwmInit();
+  33   1      
+  34   1              os_create_task (1);               //创建第一个任务      
+  35   1              os_create_task (2);               //创建第二个任务
+  36   1              os_create_task (3);               //创建第二个任务
+  37   1      
+  38   1              os_delete_task (0);               //初始化完毕，删除自身任务
+  39   1      }
+  40          
+  41          ///**********************************************************************
+  42          //      第二个任务，使用按键驱动屏幕显示
+  43          //**********************************************************************/
+  44          void LED1() _task_ 1{
+  45   1              while (1)  {
+  46   2                      if(P23 == 0){
+  47   3                              os_wait2 (K_TMO, 1);
+  48   3                              if(P23 == 0){
+  49   4                                      i++;
+  50   4                                      if(i >128){
+  51   5                                              i = 128;
+  52   5                                      }
+  53   4                                      setPwmOne(i);
+  54   4                                      setPwmTwo(i);
+  55   4                                      os_send_signal (3);     
+C51 COMPILER V9.00   MIAN                                                                  07/15/2017 19:40:37 PAGE 2   
+
+  56   4                              }
+  57   3                              while(!P23);
+  58   3                      }
+  59   2                      if(P24 == 0){
+  60   3                              os_wait2 (K_TMO, 1);
+  61   3                              if(P24 == 0){
+  62   4                                      i--;
+  63   4                                      if(i == 0){
+  64   5                                              i = 1;                  
+  65   5                                      }
+  66   4                                      setPwmOne(i);
+  67   4                                      setPwmTwo(i);
+  68   4                                      os_send_signal (3);     
+  69   4                              }
+  70   3                              while(!P24);
+  71   3                      }
+  72   2              }
+  73   1      }
+  74          
+  75          /**********************************************************************
+  76                  第三个任务，使用12864进行驱动显示按键按下了按键1
+  77          **********************************************************************/
+  78          void LCD1() _task_ 2{
+  79   1              while(1){
+  80   2                      ;
+  81   2              }
+  82   1      }
+  83          /**********************************************************************
+  84                  第三个任务，使用12864进行LED驱动
+  85          **********************************************************************/
+  86          void LCD2() _task_ 3{
+  87   1              static i = 1;
+  88   1              while(1){
+  89   2      //              setTable(x);
+  90   2      //              x+= i;
+  91   2      //              if(x == 50){
+  92   2      //                      i = -1;
+  93   2      //              }
+  94   2      //              if(x == 50){
+  95   2      //                      i = 1;
+  96   2      //              }
+  97   2                      x = ADC_read(0x41);
+  98   2                      setTable((uchar)(x/2.8));
+  99   2      
+ 100   2              }
+ 101   1      }
+*** WARNING C280 IN LINE 87 OF MIAN.C: 'i': unreferenced local variable
+ 102          
+ 103          
+ 104          //void main(){
+ 105          //      Timer1Init();
+ 106          //      EA = 1;
+ 107          //      while(1){
+ 108          //              ;
+ 109          //      }
+ 110          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    152    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V9.00   MIAN                                                                  07/15/2017 19:40:37 PAGE 3   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     21    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1607 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\STC15\Tiny51\6操作系统按键进行12864的菜单控制\MIAN.uvproj
+Project File Date:  07/14/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(123): warning C206: 'DIS12864M': missing function-prototype
+TABLE.C(136): error C100: unprintable character 0xA8 skipped
+TABLE.C(136): error C202: 'FirstLineDisIndexC': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(138): error C100: unprintable character 0xA8 skipped
+TABLE.C(138): error C202: 'FirstLineDisIndexC': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(175): warning C206: 'SetALineReverse': missing function-prototype
+TABLE.C(175): error C267: 'SetALineReverse': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(175): warning C206: 'SetALineReverse': missing function-prototype
+TABLE.C(175): error C267: 'SetALineReverse': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(29): error C244: 'sOption': can't initialize, bad type or class
+TABLE.C(52): error C132: 'sOption': not in formal parameter list
+TABLE.C(58): error C244: 'Level': can't initialize, bad type or class
+TABLE.C(61): error C132: 'Level': not in formal parameter list
+TABLE.C(62): error C244: 'FirstLineDisIndex': can't initialize, bad type or class
+TABLE.C(62): error C132: 'FirstLineDisIndex': not in formal parameter list
+TABLE.C(63): error C244: 'SelectLine': can't initialize, bad type or class
+TABLE.C(63): error C132: 'SelectLine': not in formal parameter list
+TABLE.C(64): error C244: 'SelectIndex': can't initialize, bad type or class
+TABLE.C(64): error C132: 'SelectIndex': not in formal parameter list
+TABLE.C(65): error C244: 'LastIndex': can't initialize, bad type or class
+TABLE.C(65): error C132: 'LastIndex': not in formal parameter list
+TABLE.C(77): error C132: 'MenuLevelStart': not in formal parameter list
+TABLE.C(77): error C141: syntax error near '{'
+TABLE.C(78): error C244: 'i': can't initialize, bad type or class
+TABLE.C(78): error C132: 'i': not in formal parameter list
+TABLE.C(79): error C141: syntax error near 'do'
+TABLE.C(81): error C129: missing ';' before '--'
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(176): error C267: 'SetALineReverse': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(176): error C267: 'SetALineReverse': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(176): error C267: 'SetALineReverse': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(200): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(200): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(200): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(200): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(200): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(200): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(200): warning C206: 'Lcd_str': missing function-prototype
+TABLE.C(200): error C267: 'Lcd_str': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(205): warning C206: 'delay_ms': missing function-prototype
+TABLE.C(205): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(208): warning C206: 'KEY_Scan': missing function-prototype
+TABLE.C(211): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(211): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(254): error C202: 'down': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(271): warning C206: 'Arm_SEN_set': missing function-prototype
+TABLE.C(272): warning C206: 'Arm_Delay_set': missing function-prototype
+TABLE.C(273): warning C206: 'Time_set': missing function-prototype
+TABLE.C(274): warning C206: 'Password_switch_set': missing function-prototype
+TABLE.C(355): warning C206: 'delay_ms': missing function-prototype
+TABLE.C(355): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(355): warning C206: 'delay_ms': missing function-prototype
+TABLE.C(355): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(387): warning C206: 'KEY_Scan': missing function-prototype
+TABLE.C(391): error C202: 'down_sum': undefined identifier
+TABLE.C(404): error C202: 'Password_SW': undefined identifier
+TABLE.C(413): error C202: 'BL_set_L': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(294): warning C206: 'delay_ms': missing function-prototype
+TABLE.C(294): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(297): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(297): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+TABLE.C(311): error C158: '_SetALineReverse': function contains unnamed parameter
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(297): warning C206: 'LCD_Chinese_disp': missing function-prototype
+TABLE.C(297): error C267: 'LCD_Chinese_disp': requires ANSI-style prototype
+TABLE.C(311): error C158: '_SetALineReverse': function contains unnamed parameter
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(311): error C158: '_SetALineReverse': function contains unnamed parameter
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(313): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(313): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUUPONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUDOWNONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  KEYLOST
+    MODULE:  mian.obj (MIAN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0B05H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0B1AH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0B2FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLOST
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05A5H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05ADH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05B0H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05CDH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05D3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05D9H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05E9H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05F4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 05F9H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 060BH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0613H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0616H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0631H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0639H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 063CH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 064AH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 065EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYLIS
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0663H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  KEYFUNCINDEX
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0681H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0689H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  S0
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 068CH
+Program Size: data=27.2 xdata=413 code=3445
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 41 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUUPONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUDOWNONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0A06H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0A1BH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _MENUOPERATE
+    MODULE:  mian.obj (MIAN)
+    ADDRESS: 0A30H
+Program Size: data=27.2 xdata=413 code=3170
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 17 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUUPONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUDOWNONEOPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+Program Size: data=27.2 xdata=413 code=3146
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3161
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3161
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3161
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3161
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3161
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3156
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?LED1?MIAN
+    CALLER2: ?PR?LCD2?MIAN
+Program Size: data=27.2 xdata=417 code=3169
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(74): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+Program Size: data=27.2 xdata=413 code=3171
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3174
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3174
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3183
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(296): error C141: syntax error near 'write_com'
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3183
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3172
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3172
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3175
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3186
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3185
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(75): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUENTEROPTION?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MENUCANCELOPTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3288
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3313
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3313
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3315
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3314
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3321
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3322
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(35): error C242: 'struct': too many initializers
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(35): error C242: 'struct': too many initializers
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(41): error C242: 'struct': too many initializers
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+TABLE.C(52): error C242: 'struct': too many initializers
+Target not created
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3322
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3322
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling mian.c...
+MIAN.C(82): warning C280: 'i': unreferenced local variable
+assembling Conf_tny.A51...
+compiling 12864.c...
+compiling delay.c...
+compiling gpio.c...
+compiling table.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DRAW?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_PUTPIXEL?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_CLEAR?12864
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY10MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY100MS?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SHUT_DOWN?TABLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?FUNCTIONACTION?TABLE
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?DIS12864M?TABLE
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_LCD_STR?12864
+    CALLER1: ?PR?INIT?MIAN
+    CALLER2: ?PR?LED1?MIAN
+Program Size: data=27.2 xdata=417 code=3327
+creating hex file from "MIAN"...
+"MIAN" - 0 Error(s), 12 Warning(s).

@@ -1,0 +1,8 @@
+"mian.obj",
+"Conf_tny.obj",
+"12864.obj",
+"delay.obj",
+"usar.obj",
+"GETLINE.obj" 
+TO "MIAN" Rtx51Tiny 
+RAMSIZE(256) 

@@ -1,0 +1,283 @@
+C51 COMPILER V9.00   12864                                                                 07/15/2017 19:40:37 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 12864
+OBJECT MODULE PLACED IN 12864.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE 12864.c BROWSE INCDIR(.\ZLG_GUI;.\) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <config.h>
+   2          #include "12864.h"
+   3          #include "delay.h"
+   4          //LCD忙信号检测
+   5          void check_buys()
+   6          {
+   7   1              rs = 0;
+   8   1              rw = 1;
+   9   1              e  = 1;
+  10   1              LCD12864_DA_PORT = 0x00;
+  11   1              while(((LCD12864_DA_PORT & 0x80) == 0x80));
+  12   1              e = 0;
+  13   1      } 
+  14          //写指令
+  15          void write_com(uchar com)
+  16          {
+  17   1              check_buys();
+  18   1              rs = 0;
+  19   1              rw = 0;
+  20   1              e  = 1;
+  21   1              LCD12864_DA_PORT = com;
+  22   1              Delay100us(5);
+  23   1              e  = 0;
+  24   1              Delay100us(5);  
+  25   1      }                       
+  26          //写数据        
+  27          void write_data(uchar dat)
+  28          {
+  29   1              check_buys();
+  30   1              rs = 1;
+  31   1              rw = 0;
+  32   1              e  = 1;
+  33   1              LCD12864_DA_PORT = dat;
+  34   1              Delay100us(5);
+  35   1              e  = 0;
+  36   1              Delay100us(5);
+  37   1      }                                
+  38          //LCD初始化
+  39          void Lcd_init()
+  40          {
+  41   1              P5M1 &= ~(1<<4);                //设置P5.4为准双向IO
+  42   1              P5M0 &= ~(1<<4);
+  43   1      
+  44   1      
+  45   1              P5M1 &= ~(1<<0);                //设置P5.0为准双向IO
+  46   1              P5M0 &= ~(1<<0);
+  47   1      
+  48   1              P5M1 &= ~(1<<1);                //设置P5.1为准双向IO
+  49   1              P5M0 &= ~(1<<1);
+  50   1      
+  51   1              P5M1 &= ~(1<<2);                //设置P5.2为准双向IO
+  52   1              P5M0 &= ~(1<<2);
+  53   1      
+  54   1              P4M1 = 0X00;            //设置P4为准双向IO
+  55   1              P4M0 = 0X00;
+C51 COMPILER V9.00   12864                                                                 07/15/2017 19:40:37 PAGE 2   
+
+  56   1              rw = 0;
+  57   1              pst = 1;//选择并行输入
+  58   1              Delayms(10);
+  59   1              write_com(0x30);//基本指令
+  60   1              Delay100us(5);
+  61   1              write_com(0x0c);//显示开，关光标
+  62   1              Delay100us(5);
+  63   1              write_com(0x01);//写一个字符地址加一
+  64   1              Delay100us(5);
+  65   1              write_com(0x06);
+  66   1              Delay100us(5);
+  67   1      }                                                               
+  68          //图片显示
+  69          void Lcd_draw(uchar code *pic)
+  70          {
+  71   1              uchar i,j,k;
+  72   1      
+  73   1              write_com(0x34);
+  74   1              for(i = 0;i < 2;i++)
+  75   1              {
+  76   2                      for(j = 0;j < 32; j++)
+  77   2                      {
+  78   3                              write_com(0x80 + j);
+  79   3                              if(i == 0)
+  80   3                              {
+  81   4                                      write_com(0x80);
+  82   4                              }
+  83   3                              else
+  84   3                              {
+  85   4                                      write_com(0x88);
+  86   4                              }
+  87   3                              for(k = 0;k < 16;k++)
+  88   3                              {
+  89   4                                      write_data(*pic++);
+  90   4                              }
+  91   3                      }
+  92   2              }
+  93   1              write_com(0x36);
+  94   1              write_com(0x30);
+  95   1      }                  
+  96          //指定位置显示汉字
+  97          void Lcd_str(uchar X,uchar Y,uchar *s)
+  98          {
+  99   1              uchar pos;
+ 100   1              if(X == 0)
+ 101   1                      X = 0x80;
+ 102   1              else if(X == 1)
+ 103   1                      X = 0x90;
+ 104   1              else if(X == 2)
+ 105   1                      X = 0x88;
+ 106   1              else if(X == 3)
+ 107   1                      X = 0x98;
+ 108   1              pos = X+Y;
+ 109   1              write_com(pos);
+ 110   1              while(*s>0)
+ 111   1              {
+ 112   2                      write_data(*s++);
+ 113   2                      Delay100us(5);
+ 114   2              }
+ 115   1      }
+ 116          /***********************************
+ 117          从LCD中读出数据
+C51 COMPILER V9.00   12864                                                                 07/15/2017 19:40:37 PAGE 3   
+
+ 118          ************************************/
+ 119          
+ 120          void Delay100u()                //@11.0592MHz
+ 121          {
+ 122   1              unsigned char i, j;
+ 123   1      
+ 124   1              _nop_();
+ 125   1              _nop_();
+ 126   1              i = 2;
+ 127   1              j = 15;
+ 128   1              do
+ 129   1              {
+ 130   2                      while (--j);
+ 131   2              } while (--i);
+ 132   1      }
+ 133          
+ 134          unsigned char Lcd_ReadData(void)
+ 135          {
+ 136   1              unsigned char Temp;
+ 137   1              check_buys();
+ 138   1              LCD12864_DA_PORT = 0xff;
+ 139   1              rs=1;
+ 140   1              rw=1;
+ 141   1              e=0;
+ 142   1              e=1;
+ 143   1              Delay100u();
+ 144   1              Temp=LCD12864_DA_PORT;
+ 145   1              e=0;
+ 146   1              return Temp;
+ 147   1      }
+ 148          
+ 149          /**************************************
+ 150          为加速逻辑运算而设置的掩码表，这是以牺牲空间而换取时间的办法
+ 151          ***************************************/
+ 152          code unsigned int LcdMaskTab[]={0x0001,0x0002,0x0004,0x0008,0x0010,0x0020,0x0040,0x0080,0x0100,0x0200,0x04
+             -00,0x0800,0x1000,0x2000,0x4000,0x8000};
+ 153          /***************************************
+ 154          向LCD指定坐标写入一个象素,象素颜色有两种，0代表白（无显示），1代表黑（有显示）
+ 155          ****************************************/
+ 156          void Lcd_PutPixel(unsigned char x,unsigned char y,unsigned char Color)
+ 157          {
+ 158   1              unsigned char z,w;
+ 159   1              unsigned int Temp;
+ 160   1              if(x>=128||y>=64)
+ 161   1                      return;
+ 162   1              Color=Color%2;
+ 163   1              w=15-x%16;//确定对这个字的第多少位进行操作
+ 164   1              x=x/16;//确定为一行上的第几字
+ 165   1      
+ 166   1              if(y<32) //如果为上页
+ 167   1                      z=0x80;
+ 168   1              else     //否则如果为下页
+ 169   1                      z=0x88;
+ 170   1      
+ 171   1              y=y%32;
+ 172   1              EA=0;
+ 173   1              write_com(0x36);
+ 174   1              write_com(y+0x80);        //行地址
+ 175   1              write_com(x+z);     //列地址 
+ 176   1              Temp=Lcd_ReadData();//先空读一次
+ 177   1      
+ 178   1              Temp=(unsigned int)Lcd_ReadData()<<8;//再读出高8位
+C51 COMPILER V9.00   12864                                                                 07/15/2017 19:40:37 PAGE 4   
+
+ 179   1              Temp|=(unsigned int)Lcd_ReadData();//再读出低8位
+ 180   1              EA=1;
+ 181   1              if(Color==1) //如果写入颜色为1
+ 182   1                      Temp|=LcdMaskTab[w];//在此处查表实现加速
+ 183   1              else         //如果写入颜色为0
+ 184   1                      Temp&=~LcdMaskTab[w];//在此处查表实现加速
+ 185   1              EA=0;
+ 186   1              write_com(y+0x80);        //行地址
+ 187   1              write_com(x+z);     //列地址
+ 188   1              write_data(Temp>>8);//先写入高8位，再写入低8位
+ 189   1          write_data(Temp&0x00ff);
+ 190   1              write_com(0x30);
+ 191   1              EA=1;
+ 192   1      
+ 193   1      }
+ 194          
+ 195          void Lcd_PutPixel_Sp(unsigned char x,unsigned char y,unsigned char Color)
+ 196          {
+ 197   1              unsigned char z,w;
+ 198   1              unsigned int Temp;
+ 199   1              if(x>=128||y>=64)
+ 200   1                      return;
+ 201   1              Color=Color%2;
+ 202   1              w=15-x%16;//确定对这个字的第多少位进行操作
+ 203   1              x=x/16;//确定为一行上的第几字
+ 204   1      
+ 205   1              if(y<32) //如果为上页
+ 206   1                      z=0x80;
+ 207   1              else     //否则如果为下页
+ 208   1                      z=0x88;
+ 209   1      
+ 210   1              y=y%32;
+ 211   1              Temp = 0x0000;
+ 212   1              if(Color==1) //如果写入颜色为1
+ 213   1                      Temp|=LcdMaskTab[w];//在此处查表实现加速
+ 214   1              else         //如果写入颜色为0
+ 215   1                      Temp&=~LcdMaskTab[w];//在此处查表实现加速
+ 216   1              EA=0;
+ 217   1              write_com(0x36);
+ 218   1              write_com(y+0x80);        //行地址
+ 219   1              write_com(x+z);     //列地址
+ 220   1              write_data(Temp>>8);//先写入高8位，再写入低8位
+ 221   1          write_data(Temp&0x00ff);
+ 222   1              write_com(0x30);
+ 223   1              EA=1;
+ 224   1      
+ 225   1      }
+ 226          /*****************************************
+ 227          清除Lcd全屏，如果清除模式Mode为0，则为全屏清除为颜色0（无任何显示）
+ 228          否则为全屏清除为颜色1(全屏填充显示)
+ 229          ******************************************/
+ 230          void Lcd_Clear(unsigned char Mode)
+ 231          {
+ 232   1              unsigned char x,y,ii;
+ 233   1              unsigned char Temp;
+ 234   1              if(Mode%2==0)
+ 235   1                      Temp=0x00;
+ 236   1              else
+ 237   1                      Temp=0xff;
+ 238   1              write_com(0x36);//扩充指令 绘图显示
+ 239   1              for(ii=0;ii<9;ii+=8)   
+ 240   1                      for(y=0;y<0x20;y++)     
+C51 COMPILER V9.00   12864                                                                 07/15/2017 19:40:37 PAGE 5   
+
+ 241   1                              for(x=0;x<8;x++)
+ 242   1                              {       
+ 243   2                                      EA=0;
+ 244   2                                      write_com(y+0x80);        //行地址
+ 245   2                                      write_com(x+0x80+ii);     //列地址     
+ 246   2                                      write_data(Temp); //写数据 D15－D8 
+ 247   2                                      write_data(Temp); //写数据 D7－D0 
+ 248   2                                      EA=1;
+ 249   2                              }
+ 250   1              write_com(0x30);
+ 251   1      }       
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    830    ----
+   CONSTANT SIZE    =     32    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      24
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

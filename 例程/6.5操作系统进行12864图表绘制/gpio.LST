@@ -1,0 +1,31 @@
+C51 COMPILER V9.00   GPIO                                                                  07/15/2017 19:40:37 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE GPIO
+OBJECT MODULE PLACED IN gpio.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE gpio.c BROWSE INCDIR(.\ZLG_GUI;.\) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <config.h>
+   2          
+   3          void gpio()
+   4          {
+   5   1              P0M1=0;P0M0=0;P1M1=0;P1M0=0;
+   6   1              P2M1=0;P2M0=0;P3M1=0;P3M0=0;
+   7   1              P4M1=0;P4M0=0;P5M1=0;P5M0=0;
+   8   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     26    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,84 @@
+C51 COMPILER V9.00   MIAN                                                                  07/12/2017 17:25:47 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MIAN
+OBJECT MODULE PLACED IN mian.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE mian.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**********************************************************************
+   2          作者：套套
+   3          邮箱：2011543651@qq.com
+   4          功能：用于演示STC15使用tiny51系统的例子
+   5                          使用自己写的函数以及系统自带的标准输入输出函数来进行串口输出
+   6                          使用自带的任务信号函数进行交流
+   7          
+   8          **********************************************************************/
+   9          #include <rtx51tny.h>
+  10          #include <config.H>
+  11          #include <stdio.h>
+  12          #include <usar.h>
+  13          
+  14          #define os_enter_critical() ET0=0
+  15          #define os_exit_critical()      ET0=1
+  16          
+  17          uchar inline[16] = "JKLJK";
+  18          
+  19          
+  20          /**********************************************************************
+  21                  第一个任务，用于初始化。
+  22          **********************************************************************/
+  23          void Init() _task_ 0  {                  
+  24   1              os_create_task (1);               //创建第一个任务      
+  25   1              os_create_task (2);               //创建第二个任务              
+  26   1              UartInit();                               //进行串口的初始化    
+  27   1      
+  28   1              os_delete_task (0);               //初始化完毕，删除自身任务
+  29   1      }
+  30          
+  31          /**********************************************************************
+  32                  第二个任务，使用SendString函数进行串口发送
+  33          **********************************************************************/
+  34          void LED1() _task_ 1{
+  35   1              while (1)  {
+  36   2                      printf ("\nCommand: ");
+  37   2                      getline (&inline, sizeof (inline));
+  38   2                      printf ("getData");
+  39   2              }
+  40   1      }
+  41          
+  42          /**********************************************************************
+  43                  第三个任务，使用标准输入输出的printf来进行串口发送
+  44          **********************************************************************/
+  45          void LED2() _task_ 2{
+  46   1              
+  47   1              while(1){
+  48   2                                                 //发送字符数组                       
+  49   2              }
+  50   1      }
+  51          
+  52          
+  53          //void main(){
+  54          //      Timer1Init();
+  55          //      EA = 1;
+C51 COMPILER V9.00   MIAN                                                                  07/12/2017 17:25:47 PAGE 2   
+
+  56          //      while(1){
+  57          //              ;
+  58          //      }
+  59          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     47    ----
+   CONSTANT SIZE    =     19    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     16    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

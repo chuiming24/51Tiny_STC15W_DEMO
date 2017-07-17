@@ -1,0 +1,4 @@
+"mian.obj",
+"Conf_tny.obj" 
+TO "MIAN" Rtx51Tiny 
+RAMSIZE(256) 

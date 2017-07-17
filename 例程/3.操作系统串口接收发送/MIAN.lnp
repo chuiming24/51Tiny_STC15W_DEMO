@@ -1,0 +1,6 @@
+"mian.obj",
+"Conf_tny.obj",
+"SERIAL.obj",
+"GETLINE.obj" 
+TO "MIAN" Rtx51Tiny 
+RAMSIZE(256) 
