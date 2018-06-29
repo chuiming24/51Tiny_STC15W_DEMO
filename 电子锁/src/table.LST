@@ -1,0 +1,366 @@
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE TABLE
+OBJECT MODULE PLACED IN table.OBJ
+COMPILER INVOKED BY: C:\KeilC51\C51\BIN\C51.EXE table.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <config.h>
+   2          #include <table.h>
+   3          #include <12864.h>
+   4          #define MENULEVEL 2 //当前菜单表个数 
+   5          #define OPTIONMETE 20 //当前选项个数，包括一个特别功能选项 
+   6          //#define SIZE sizeof(Address_buf) 
+   7          //————————————- 
+   8          // 
+   9          // 菜单结构定义 
+  10          // 
+  11          //————————————- 
+  12          
+  13          void DIS12864M ();
+  14          void SetALineReverse(unsigned char input);
+  15          struct Option{ 
+  16          unsigned char KeyLevel; //菜单选项所属菜单表号 
+  17          unsigned char EnterIndex; //选项进入索引号 
+  18          unsigned char CancelIndex; //选项退出索引号 
+  19          unsigned char KeyWord[16]; //菜单选项文字描述数组  
+  20          }; 
+  21          //————————————- 
+  22          // 
+  23          // 具体菜单选项定义，定义一个结构数组 
+  24          // 存储在编码区，节省内存RAM 
+  25          // 功能的进入索引应大于OPTIONMETE 
+  26          // 在FunctionAction(void)函数的case选项 
+  27          // 中应定义出索引对应的功能函数。 
+  28          //————————————- 
+  29          struct Option sOption[OPTIONMETE] = { 
+  30          {0,OPTIONMETE-1,0,"设置报警界限"}, //0 
+  31          
+  32          {0,OPTIONMETE-1,0,"设置报警延时"}, //1 //一级菜单 
+  33          {0,OPTIONMETE-1,0,"设置时钟时间"}, //2 
+  34          {0,OPTIONMETE-1,0,"设置密码开关"}, //3 
+  35          {0,6,0,"系统版本"}, //4 
+  36          {0,OPTIONMETE-1,0,"退出菜单"}, //5
+  37          {1,OPTIONMETE-1,3,"****硬件****"},           //6        
+  38          {1,OPTIONMETE-1,3,"GSDC_V1.5"},               //7      
+  39          {1,OPTIONMETE-1,3,"****软件****"},           //8  
+  40                
+  41          {1,OPTIONMETE-1,3,"GUI:"},                    //9//“系统版本”选项二级菜单
+  42          {1,OPTIONMETE-1,3,"Worm_V0.95"},             //10         
+  43          {1,OPTIONMETE-1,3,"Program:"},                //11         
+  44          {1,OPTIONMETE-1,3,"GSDC_Program"},           //12        
+  45          {1,OPTIONMETE-1,3,"V1.6.1"},                  //13         
+  46          {1,OPTIONMETE-1,3,"****服务****"},           //14       
+  47          {1,OPTIONMETE-1,3," TCP终端设备"},           //15         
+  48          {1,OPTIONMETE-1,3,"客服电话："},             //16      
+  49          {1,OPTIONMETE-1,3,"          "},             //17        
+  50          {1,0,0,"返回"},             //18 
+  51          
+  52          {0,0,0,""}                                    //19//特殊，无操作索引 用于判别是否进入功能函数
+  53          }; 
+  54          //————————————– 
+  55          // 
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 2   
+
+  56          // 菜单表分类数组 
+  57          // 
+  58          //————————————– 
+  59          unsigned char Level[MENULEVEL][3] = {//每层表单对应 开始索引号、结束索引号、选项数目 
+  60                                                                                          {0,5,6}, 
+  61                                                                                          {6,18,13}, 
+  62                                                                                  }; 
+  63          
+  64          
+  65          //以下不用修改
+  66          unsigned char FirstLineDisIndex = 0; //屏幕第一行显示的索引号 
+  67          unsigned char SelectLine = 1; //当前选择的行 
+  68          unsigned char SelectIndex = 0; //当前选定行对应的索引号 
+  69          unsigned char LastIndex = 0; //进入功能函数前的索引号，判断具体功能使用 
+  70          /*此部分为菜单的预定义部分应放在文件的最开头*/ 
+  71          
+  72          //—————————————- 
+  73          // 
+  74          // 判断当前索引是否是表单第一项功能函数 
+  75          // 函数原形：u8 MenuLevelStart (void); 
+  76          // 没有参数，返回Bit标志，是第一项返回1，不是返回0 
+  77          // 调用方式：u8 MenuLevelStart (void); 
+  78          // 
+  79          //—————————————- 
+  80          uchar MenuLevelStart (void) //判断当前索引是否为当前层第一个选项 
+  81          { 
+  82   1              unsigned char i = MENULEVEL; 
+  83   1              do 
+  84   1              { 
+  85   2                      i--; 
+  86   2                      if(SelectIndex == Level[i][0])
+  87   2                              return 1; 
+  88   2              }while(i);
+  89   1               
+  90   1              return 0; 
+  91   1      } 
+  92          //—————————————- 
+  93          // 
+  94          // 判断当前索引是否是表单最后一项功能函数 
+  95          // 函数原形：u8 MenuLevelEnd (void); 
+  96          // 没有参数，返回Bit标志，是最后一项返回1，不是返回0 
+  97          // 调用方式：u8 MenuLevelEnd (void); 
+  98          // 
+  99          //—————————————- 
+ 100          uchar MenuLevelEnd (void) 
+ 101          { 
+ 102   1              unsigned char i = MENULEVEL; 
+ 103   1              do 
+ 104   1              { 
+ 105   2                      i--; 
+ 106   2                      if(SelectIndex == Level[i][1])
+ 107   2                              return 1; 
+ 108   2              }while(i); 
+ 109   1      
+ 110   1              return 0; 
+ 111   1      } 
+ 112          //—————————————- 
+ 113          // 
+ 114          // 菜单上移一项函数 
+ 115          // 函数原形：void MenuUpOneOption (void); 
+ 116          // 没有参数，没有返回值 
+ 117          // 调用方式：void MenuUpOneOption (void); 
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 3   
+
+ 118          // 
+ 119          //—————————————- 
+ 120          void MenuUpOneOption (void) 
+ 121          { 
+ 122   1              if(MenuLevelStart ()) //如果当前为表单第一项 
+ 123   1              { 
+ 124   2                      if(Level[sOption[SelectIndex].KeyLevel][2]>=4) //并且表单中选项数目大于等于4个 
+ 125   2                      { 
+ 126   3                              FirstLineDisIndex = Level[sOption[SelectIndex].KeyLevel][1]-3; 
+ 127   3                              //第一行显示索引号为倒数第四项 
+ 128   3                              SelectIndex = Level[sOption[SelectIndex].KeyLevel][1]; //选择索引为表单最后一项 
+ 129   3                              SelectLine = 4; //标记选择行为第四行 
+ 130   3                              DIS12864M (); //刷新屏幕显示 
+ 131   3                      } 
+ 132   2                      else //如果选项数目并不大于四个 
+ 133   2                      { 
+ 134   3                      //还没折腾
+ 135   3                              SelectIndex = Level[sOption[SelectIndex].KeyLevel][1]; //选择索引为当前表单最后一个 
+ 136   3                              SelectLine = Level[sOption[SelectIndex].KeyLevel][2]; //显示行表单数目(最后一个) 
+ 137   3                              DIS12864M (); //刷新屏幕显示 
+ 138   3                      } 
+ 139   2              } 
+ 140   1              else //如果当前不是开始索引 
+ 141   1              { 
+ 142   2                      if(SelectLine==1) //并且已经在屏幕最上边一行 
+ 143   2                      { 
+ 144   3                              FirstLineDisIndex--;//显示索引上移 
+ 145   3                              SelectIndex--; //选择索引自减 
+ 146   3                              SelectLine = 1; //选择行还是第一行 
+ 147   3                              DIS12864M (); //刷新屏幕 
+ 148   3                      } 
+ 149   2                      else //如果不是第一行 
+ 150   2                      { 
+ 151   3                              SelectLine--;//选择行自减 
+ 152   3                              SelectIndex--;//选择索引自减 
+ 153   3                              DIS12864M (); //刷新屏幕显示 
+ 154   3                      } 
+ 155   2              } 
+ 156   1      } 
+ 157          //—————————————- 
+ 158          // 
+ 159          // 菜单下移一项函数 
+ 160          // 函数原形：void MenuDownOneOption (void); 
+ 161          // 没有参数，没有返回值 
+ 162          // 调用方式：void MenuDownOneOption (void); 
+ 163          // 
+ 164          //—————————————- 
+ 165          void MenuDownOneOption (void) 
+ 166          { 
+ 167   1              if(MenuLevelEnd ()) //如果当前是表单最后一个索引 
+ 168   1              { 
+ 169   2                      FirstLineDisIndex = Level[sOption[SelectIndex].KeyLevel][0];
+ 170   2                      //第一行显示索引为表单第一个选项 
+ 171   2                      SelectIndex = Level[sOption[SelectIndex].KeyLevel][0]; 
+ 172   2                      //选择索引为表单第一个选项索引 
+ 173   2                      SelectLine = 1; //选择行为第一行 
+ 174   2                      DIS12864M (); //刷新显示 
+ 175   2              } 
+ 176   1              else //如果不是最后的索引 
+ 177   1              { 
+ 178   2                      if(SelectLine!=4) //如果当前不是屏幕最底行 
+ 179   2                      { 
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 4   
+
+ 180   3                              SelectIndex++; //选择索引自加 
+ 181   3                              SelectLine++; //选择行下移 
+ 182   3                              SetALineReverse(SelectLine); //刷新选择行 
+ 183   3                              DIS12864M (); //刷新显示 
+ 184   3                      } 
+ 185   2                      else //如果是屏幕最低行 
+ 186   2                      { 
+ 187   3                              FirstLineDisIndex++; //第一行显示下移 
+ 188   3                              SelectIndex++; //选择索引自加 
+ 189   3                              DIS12864M(); //刷新显示 
+ 190   3                      } 
+ 191   2              } 
+ 192   1      }
+ 193          
+ 194          void shut_down(void) //菜单“退出系统”选项的功能实现 
+ 195          { 
+ 196   1              FirstLineDisIndex = 0; //屏幕第一行显示的索引号 
+ 197   1              SelectLine = 1; //当前选择的行 
+ 198   1              SelectIndex = 0; //当前选定行对应的索引号 
+ 199   1              LastIndex = 0; //进入功能函数前的索引号，判断具体功能使用 
+ 200   1      //      down = 1; 
+ 201   1      }
+ 202          
+ 203          //—————————————- 
+ 204          // 
+ 205          // 具体功能散转函数 
+ 206          // 函数原形：void FunctionAction 
+ 207          // 没有参数，没有返回值 
+ 208          // 调用方式：void FunctionAction (void); 
+ 209          // 
+ 210          //—————————————- 
+ 211          void FunctionAction (void) //////////////////////////////// 
+ 212          { 
+ 213   1      //      switch(LastIndex) //根据进入前的索引判断具体函数 
+ 214   1      //      { 
+ 215   1      //              case 5:shut_down(); break; //退出菜单功能索引
+ 216   1      //      
+ 217   1      //          case 0:Arm_SEN_set(); break;          //报警灵敏度设置         
+ 218   1      //          case 1:Arm_Delay_set(); break;         //报警延时设置     
+ 219   1      //          case 2:Time_set(); break;             //时间设置功能索引    
+ 220   1      //          case 3:Password_switch_set(); break;     //密码校验开关
+ 221   1      //      
+ 222   1      //          default:shut_down();break;             //如果没有具体操作，显示没有这个功能
+ 223   1      //      }
+ 224   1      } 
+ 225          //—————————————- 
+ 226          // 
+ 227          // 进入某项功能函数 
+ 228          // 函数原形：void MenuEnterOption (void); 
+ 229          // 没有参数，没有返回值 
+ 230          // 调用方式：void MenuEnterOption (void); 
+ 231          // 
+ 232          //—————————————- 
+ 233          void MenuEnterOption (void) 
+ 234          { 
+ 235   1              if(SelectIndex != OPTIONMETE-1) //如果当前索引不是功能选择索引 //////////////////////////////////////////
+             -/////////////////// 
+ 236   1              {       
+ 237   2                      LastIndex = SelectIndex; //标记进入前的索引号（以便判断具体功能） 
+ 238   2                      SelectIndex = sOption[SelectIndex].EnterIndex; 
+ 239   2                      //更新选择索引为之前索引号对应进入索引 
+ 240   2                      if(SelectIndex != OPTIONMETE-1) //如果当前索引不是功能选择索引 /////////////////////////////////////////
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 5   
+
+             -//////////////////// 
+ 241   2                      { 
+ 242   3                              FirstLineDisIndex = SelectIndex;
+ 243   3                              //第一行显示为进入表单第一项 
+ 244   3                              SelectLine = 1; //设定第一行为选择行 
+ 245   3                              DIS12864M (); //刷新菜单 
+ 246   3                      } 
+ 247   2                      else{
+ 248   3                              write_com(0x30); //进入液晶普通指令模式 
+ 249   3                              write_com(0x01); //清屏                  
+ 250   3                              Lcd_str(0,1,sOption[LastIndex].KeyWord);
+ 251   3                              Lcd_str(2,0,"此功能尚未实现!!");
+ 252   3                              //FunctionAction (); //如果是功能选择项，进入功能分支判断函数
+ 253   3                      }
+ 254   2              } 
+ 255   1      } 
+ 256          //—————————————- 
+ 257          // 
+ 258          // 菜单退出功能函数 
+ 259          // 函数原形：void MenuCancelOption (void); 
+ 260          // 没有参数，没有返回值 
+ 261          // 调用方式：void MenuCancelOption (void); 
+ 262          // 
+ 263          //—————————————- 
+ 264          void MenuCancelOption (void) 
+ 265          { 
+ 266   1              if(SelectIndex != OPTIONMETE-1) //如果不是从功能返回 
+ 267   1                      SelectIndex = sOption[SelectIndex].CancelIndex; //选择索引为选项返回索引 
+ 268   1              else //如果是从功能返回 
+ 269   1                      SelectIndex = LastIndex; //索引等于进入前保存索引 
+ 270   1              if(Level[sOption[SelectIndex].KeyLevel][2]>=4) //如果返回表单选项数目大于4个 
+ 271   1              { 
+ 272   2                      if(SelectIndex > Level[sOption[SelectIndex].KeyLevel][1]-3) 
+ 273   2                      //根据返回选项确定显示首项 
+ 274   2                      { 
+ 275   3                              FirstLineDisIndex = Level[sOption[SelectIndex].KeyLevel][1]-3; 
+ 276   3                              SelectLine = 4-(Level[sOption[SelectIndex].KeyLevel][1]-SelectIndex); 
+ 277   3                              DIS12864M (); //刷新显示 
+ 278   3                      } 
+ 279   2                      else //一般显示方式 
+ 280   2                      { 
+ 281   3                              FirstLineDisIndex = SelectIndex; //第一行显示索引 
+ 282   3                              SelectLine = 1; //选择第一行 
+ 283   3                              DIS12864M (); //刷新菜单 
+ 284   3                      } 
+ 285   2              } 
+ 286   1              else //如果返回表单选项数目不足4个 
+ 287   1              { 
+ 288   2                      FirstLineDisIndex = Level[sOption[SelectIndex].KeyLevel][0]; 
+ 289   2                      //第一行显示索引为表单第一项 
+ 290   2                      //选择行标志为当前选择索引对应行 
+ 291   2                      DIS12864M (); //刷新菜单 
+ 292   2              } 
+ 293   1      } 
+ 294          
+ 295          //—————————————- 
+ 296          // 
+ 297          // 刷新菜单功能函数 
+ 298          // 函数原形：void DIS12864M (void); 
+ 299          // 没有参数，没有返回值 
+ 300          // 调用方式：void DIS12864M (void); 
+ 301          // 
+C51 COMPILER V9.00   TABLE                                                                 06/29/2018 09:35:39 PAGE 6   
+
+ 302          //—————————————- 
+ 303          void DIS12864M (void) 
+ 304          { 
+ 305   1              unsigned char LineMete = Level[sOption[SelectIndex].KeyLevel][2]; //循环量,显示行数
+ 306   1      //      LineMete 
+ 307   1              write_com(0x30); //进入液晶普通指令模式 
+ 308   1              write_com(0x01); //清屏 
+ 309   1              SetALineReverse(SelectLine); //填充所需反白 
+ 310   1              do //分别显示各行菜单项 
+ 311   1              { 
+ 312   2                      Lcd_str(0,1,sOption[FirstLineDisIndex].KeyWord);
+ 313   2                      LineMete--; 
+ 314   2                      if(LineMete == 0) break;
+ 315   2                      
+ 316   2                      Lcd_str(1,1,sOption[FirstLineDisIndex+1].KeyWord);
+ 317   2                      LineMete--; 
+ 318   2                      if(LineMete == 0) break;
+ 319   2                      
+ 320   2                      Lcd_str(2,1,sOption[FirstLineDisIndex+2].KeyWord);
+ 321   2                      LineMete--; 
+ 322   2                      if(LineMete == 0) break;
+ 323   2                      
+ 324   2                      Lcd_str(3,1,sOption[FirstLineDisIndex+3].KeyWord);
+ 325   2              }while(0);
+ 326   1              SetALineReverse(SelectLine);           //填充所需反白 
+ 327   1      }
+ 328          
+ 329          void SetALineReverse(uchar input){
+ 330   1              Lcd_str(input-1,0,">>");
+ 331   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    839    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =    390       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

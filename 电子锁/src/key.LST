@@ -1,0 +1,73 @@
+C51 COMPILER V9.00   KEY                                                                   06/29/2018 10:12:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN key.OBJ
+COMPILER INVOKED BY: C:\KeilC51\C51\BIN\C51.EXE key.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <config.h>
+   2          #include <key.h>
+   3          
+   4          uchar keyPress = 0;
+   5          bit key_re;
+   6          uchar keyValue = 0;
+   7          
+   8          uchar read_keyboard(void)
+   9          {
+  10   1          static unsigned char col;
+  11   1          
+  12   1              P2 = 0xf0; 
+  13   1      
+  14   1          if(P2 != 0xf0) //有按键按下
+  15   1              keyPress++;
+  16   1              else
+  17   1                      keyPress = 0;  //抖动
+  18   1          
+  19   1          if(keyPress == 3)
+  20   1          {
+  21   2                      return 1;
+  22   2                      keyPress = 0;
+  23   2                      key_re = 1;
+  24   2                      
+  25   2                      if((P2 & 0x80) == 0)    col = 1;
+  26   2                      if((P2 & 0x40) == 0)    col = 2;
+  27   2                      if((P2 & 0x20) == 0)    col = 3;
+  28   2                      if((P2 & 0x10) == 0)    col = 4;
+  29   2              
+  30   2              P2 = 0x0F;
+  31   2      
+  32   2                      if((P2&0x01) == 0)      keyValue = (col-1);
+  33   2                      if((P2&0x02) == 0)      keyValue = (col+3);
+  34   2                      if((P2&0x04) == 0)      keyValue = (col+7);
+  35   2                      if((P2&0x08) == 0)      keyValue = (col+11);
+  36   2          }
+  37   1          
+  38   1              //连续三次检测到按键被按下，并且该按键已经释放
+  39   1              P2 = 0x0f;
+  40   1              
+  41   1          if(((key_re == 1) && (P2 == 0x0f)))
+  42   1          {
+  43   2              key_re = 0;
+  44   2              return keyValue;
+  45   2          }
+  46   1          
+  47   1          return 0xff;  //无按键按下或被按下的按键未被释放 
+  48   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      3    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.00   KEY                                                                   06/29/2018 10:12:09 PAGE 2   
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

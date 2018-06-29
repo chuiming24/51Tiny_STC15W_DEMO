@@ -1,0 +1,8 @@
+"mian.obj",
+"12864.obj",
+"delay.obj",
+"gpio.obj",
+"key.obj",
+"RC522.obj" 
+TO "MIAN" 
+RAMSIZE(256) 
