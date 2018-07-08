@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   MIAN                                                                  06/29/2018 11:08:45 PAGE 1   
+C51 COMPILER V9.00   MIAN                                                                  06/30/2018 18:10:02 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE MIAN
@@ -62,7 +62,7 @@ line level    source
   53          //void LED1() _task_ 1{
   54          //
   55          //
-C51 COMPILER V9.00   MIAN                                                                  06/29/2018 11:08:45 PAGE 2   
+C51 COMPILER V9.00   MIAN                                                                  06/30/2018 18:10:02 PAGE 2   
 
   56          //
   57          //}
@@ -109,61 +109,93 @@ line level    source
   98   1              gpio();                 
   99   1              Lcd_init();     
  100   1      
- 101   1              Lcd_str(3, 0, "¶à¶¯ëÞµç×ÓËø");
- 102   1              while(1){
- 103   2                      temp = PcdRequest(PICC_REQALL, card_type);       //¶ÁRFIDµÚÒ»²½£ºÑ°¿¨
- 104   2                      if (temp != MI_OK)
- 105   2                      {
- 106   3                              temp = PcdReset();
- 107   3                              PcdAntennaOff();
- 108   3                              PcdAntennaOn();
- 109   3                              continue; //Ìø³ö¸Ã´ÎÑ­»·£¬½øÐÐµÚ¶þ´ÎÑ­»·¶ÁÈ¡
- 110   3                      }
- 111   2                      temp = PcdAnticoll(card_type); //¶ÁRFIDµÚ¶þ²½£º·À³å×²
- 112   2                      if (temp != MI_OK)
- 113   2                              continue;
- 114   2      
- 115   2                      temp = PcdSelect(card_type); //¶ÁRFIDµÚÈý²½£ºÑ¡¶¨¿¨Æ¬
- 116   2                      if (temp != MI_OK)
- 117   2                              continue;
-C51 COMPILER V9.00   MIAN                                                                  06/29/2018 11:08:45 PAGE 3   
+ 101   1              //¿ªÆôÍâ²¿ÖÐ¶Ï
+ 102   1              INT_CLKO |= 0x20;
+ 103   1              EA = 1;
+ 104   1      
+ 105   1              Lcd_str(3, 0, "¶à¶¯ëÞµç×ÓËø");
+ 106   1              while(1){
+ 107   2      
+ 108   2      //              if(P37 == 0){
+ 109   2      //                      Delayms(10);
+ 110   2      //                      if(P37 == 0){
+ 111   2      //                              Lcd_str(1, 0, "¿ªËø");
+ 112   2      //                              P36 = 0;
+ 113   2      //                              Delayms(1500ul);
+ 114   2      //                              P36 = 1;
+ 115   2      //                              Delayms(2000ul);
+ 116   2      //                              Lcd_str(1, 0, "    ");                                  
+ 117   2      //                      }       
+C51 COMPILER V9.00   MIAN                                                                  06/30/2018 18:10:02 PAGE 3   
 
- 118   2                      else
- 119   2                      {
- 120   3      
- 121   3                                      //card_type[3]~[0]´æ·Å×Årfid¿¨µÄuidºÅÂë£¬ÊÇ16½øÖÆÂë
- 122   3                                      card_code = card_type[3];
- 123   3                                      card_code<<=8;//±íÊ¾card_codeÏò×óÒÆ¶¯8¸ö¶þ½øÖÆÎ»£¬Ïàµ±ÓÚ³ËÉÏ2µÄ8´Î·½£¬¿ÉÒÔ²Î¿¼Ê®½øÖÆÏò×óÒÆ¶¯nÎ»¾ÍÏàµ±Ó
+ 118   2      //              }
+ 119   2                      temp = PcdRequest(PICC_REQALL, card_type);       //¶ÁRFIDµÚÒ»²½£ºÑ°¿¨
+ 120   2                      if (temp != MI_OK)
+ 121   2                      {
+ 122   3                              temp = PcdReset();
+ 123   3                              PcdAntennaOff();
+ 124   3                              PcdAntennaOn();
+ 125   3                              continue; //Ìø³ö¸Ã´ÎÑ­»·£¬½øÐÐµÚ¶þ´ÎÑ­»·¶ÁÈ¡
+ 126   3                      }
+ 127   2                      temp = PcdAnticoll(card_type); //¶ÁRFIDµÚ¶þ²½£º·À³å×²
+ 128   2                      if (temp != MI_OK)
+ 129   2                              continue;
+ 130   2      
+ 131   2                      temp = PcdSelect(card_type); //¶ÁRFIDµÚÈý²½£ºÑ¡¶¨¿¨Æ¬
+ 132   2                      if (temp != MI_OK)
+ 133   2                              continue;
+ 134   2                      else
+ 135   2                      {
+ 136   3      
+ 137   3                                      //card_type[3]~[0]´æ·Å×Årfid¿¨µÄuidºÅÂë£¬ÊÇ16½øÖÆÂë
+ 138   3                                      card_code = card_type[3];
+ 139   3                                      card_code<<=8;//±íÊ¾card_codeÏò×óÒÆ¶¯8¸ö¶þ½øÖÆÎ»£¬Ïàµ±ÓÚ³ËÉÏ2µÄ8´Î·½£¬¿ÉÒÔ²Î¿¼Ê®½øÖÆÏò×óÒÆ¶¯nÎ»¾ÍÏàµ±Ó
              -Ú³ËÉÏ10µÄn´Î·½
- 124   3                                      card_code |= card_type[2];
- 125   3                                      card_code<<=8;
- 126   3                                      card_code |= card_type[1];
- 127   3                                      card_code<<=8;
- 128   3                                      card_code |= card_type[0];//°ÑuidºÅÂë£¨unsigned long intÀàÐÍ£©¸üÐÂµ½Êý×éÀïÃæ
- 129   3      
- 130   3      
- 131   3                                      sprintf(code_string, "%lu", card_code);//sprintfÖ¸µÄÊÇ×Ö·û´®¸ñÊ½»¯ÃüÁî£¬Ö÷Òª¹¦ÄÜÊÇ°Ñ¸ñÊ½»¯µÄÊý¾ÝÐ´ÈëÄ³
+ 140   3                                      card_code |= card_type[2];
+ 141   3                                      card_code<<=8;
+ 142   3                                      card_code |= card_type[1];
+ 143   3                                      card_code<<=8;
+ 144   3                                      card_code |= card_type[0];//°ÑuidºÅÂë£¨unsigned long intÀàÐÍ£©¸üÐÂµ½Êý×éÀïÃæ
+ 145   3      
+ 146   3      
+ 147   3                                      sprintf(code_string, "%lu", card_code);//sprintfÖ¸µÄÊÇ×Ö·û´®¸ñÊ½»¯ÃüÁî£¬Ö÷Òª¹¦ÄÜÊÇ°Ñ¸ñÊ½»¯µÄÊý¾ÝÐ´ÈëÄ³
              -¸ö×Ö·û´®ÖÐ,%lu±íÊ¾Êä³öÎÞ·ûºÅ³¤ÕûÐÍÕûÊý£¬±íÊ¾µÄÊÇ½øÐÐ¸ñÊ½»¯ÊäÈëµÄ²ÎÊýµÄ¸ñÊ½    
- 132   3                                      Lcd_str(0, 0, code_string);
- 133   3      
- 134   3                                      for(i = 0; i<7; i++){
- 135   4                                              if(card_code == card[i]){
- 136   5                                                      Lcd_str(1, 0, "¿ªËø");
- 137   5                                                      P36 = 0;
- 138   5                                                      Delayms(1500ul);
- 139   5                                                      P36 = 1;
- 140   5                                                      Delayms(2000ul);
- 141   5                                                      Lcd_str(1, 0, "    ");  
- 142   5                                              }
- 143   4                                      }
- 144   3                      }                               
- 145   2              
- 146   2              }
- 147   1      }
+ 148   3                                      Lcd_str(0, 0, code_string);
+ 149   3      
+ 150   3                                      for(i = 0; i<7; i++){
+ 151   4                                              if(card_code == card[i]){
+ 152   5                                                      Lcd_str(1, 0, "¿ªËø");
+ 153   5                                                      P36 = 0;
+ 154   5                                                      Delayms(1500ul);
+ 155   5                                                      P36 = 1;
+ 156   5                                                      Delayms(2000ul);
+ 157   5                                                      Lcd_str(1, 0, "    ");  
+ 158   5                                              }
+ 159   4                                      }
+ 160   3                      }                               
+ 161   2              
+ 162   2              }
+ 163   1      
+ 164   1      }
+ 165          
+ 166          void INT3() interrupt 11                //ÖÐ¶Ï·þÎñº¯ÊýµÄÊéÐ´¸ñÊ½
+ 167          {
+ 168   1              if(P37 == 0){
+ 169   2                      Delayms(10);
+ 170   2                      if(P37 == 0){
+ 171   3                              P36 = 0;
+ 172   3                              Delayms(1500ul);
+ 173   3                              P36 = 1;
+ 174   3                              Delayms(2000ul);                                        
+ 175   3                      }       
+ 176   2              }
+ 177   1      }
+C51 COMPILER V9.00   MIAN                                                                  06/30/2018 18:10:02 PAGE 4   
+
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    445    ----
+   CODE SIZE        =    537    ----
    CONSTANT SIZE    =     55    ----
    XDATA SIZE       =     50       3
    PDATA SIZE       =   ----    ----

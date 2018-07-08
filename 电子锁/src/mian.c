@@ -98,8 +98,24 @@ unsigned char temp,t=0, i = 0;
 	gpio();			
 	Lcd_init();	
 
+	//开启外部中断
+	INT_CLKO |= 0x20;
+	EA = 1;
+
 	Lcd_str(3, 0, "多动朕电子锁");
 	while(1){
+
+//		if(P37 == 0){
+//			Delayms(10);
+//			if(P37 == 0){
+//				Lcd_str(1, 0, "开锁");
+//				P36 = 0;
+//				Delayms(1500ul);
+//				P36 = 1;
+//				Delayms(2000ul);
+//				Lcd_str(1, 0, "    ");					
+//			}	
+//		}
 		temp = PcdRequest(PICC_REQALL, card_type);	 //读RFID第一步：寻卡
 		if (temp != MI_OK)
 		{
@@ -143,5 +159,19 @@ unsigned char temp,t=0, i = 0;
 				}
 		}				
 	
+	}
+
+}
+
+void INT3() interrupt 11                //中断服务函数的书写格式
+{
+	if(P37 == 0){
+		Delayms(10);
+		if(P37 == 0){
+			P36 = 0;
+			Delayms(1500ul);
+			P36 = 1;
+			Delayms(2000ul);					
+		}	
 	}
 }
